@@ -4,7 +4,10 @@ import { useDispatch, useSelector } from "react-redux";
 import "./App.css";
 import InputField from "./components/InputField";
 import TodoList from "./components/TodoList";
+import UserList from "./components/UserList";
 import { addNewTodo,fetchTodos } from "./store/todoSlice";
+import { fetchUsers } from "./store/userSlice";
+
 
 function App() {
   const [text, setText] = useState("");
@@ -20,7 +23,10 @@ function App() {
 
   useEffect(()=>{
     dispatch(fetchTodos())
+    dispatch(fetchUsers())
   },[])
+
+  
 
   return (
     <div className="App">
@@ -31,6 +37,8 @@ function App() {
 
 
       <TodoList />
+
+      <UserList/>
     </div>
   );
 }

@@ -1,6 +1,6 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
-//fetch etmek ucun createSyncThunk istifade olunur
+//fetch etmek ucun createAsyncThunk istifade olunur
 
 export const fetchTodos = createAsyncThunk(
   "todos/fetchTodos",
@@ -111,6 +111,8 @@ export const toggleStatus = createAsyncThunk(
   }
 );
 
+
+
 const todoSlice = createSlice({
   //useselector ile cagiranda misalcun state-i  state.todos.todos cagirilacaq
   name: "todos",
@@ -118,6 +120,7 @@ const todoSlice = createSlice({
     todos: [],
     status: null,
     error: null,
+    
   },
   //reducer icinde istifade edeceyim funksiyalar olacaq
   reducers: {
